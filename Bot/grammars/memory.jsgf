@@ -1,0 +1,13 @@
+#JSGF V1.0 UTF-8 en;
+grammar memory;
+import <main.*>;
+import <util.*>;
+
+public <root> = <command>
+	| <mdigit>
+	| <mdigit> <mdigit> <mdigit> <mdigit> <mdigit>
+	| [the] (position | label) (is | was) <mdigit>
+	| (first | second | third | fourth) position
+;
+
+<mdigit> = 1 | 2 | 3 | 4;

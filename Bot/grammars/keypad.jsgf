@@ -1,0 +1,46 @@
+#JSGF V1.0 UTF-8 en;
+grammar keypad;
+import <main.*>;
+import <util.*>;
+
+public <root> = (
+	<command>
+	| <symbol>
+	| <symbol> then <symbol> then <symbol> then <symbol>
+	| back
+	| go back
+);
+
+<symbol> =
+	copyright
+	| filled star | black star
+	| hollow star | white star
+	| smiley face
+	| double k
+	| omega
+	| (squid | woomy) knife
+	| pumpkin
+	| hooked n
+	| teepee | tent
+	| six
+	| lightning
+	| pyramid
+	| a e | alpha echo
+	| melted three
+	| euro
+	| circle | hills
+	| n with hat | backward n
+	| dragon | alien | snake
+	| question mark
+	| paragraph
+	| right c | forward c
+	| left c | backward c
+	| psi | pitchfork | trident
+	| tripod | squid | woomy
+	| cursive | curly fry
+	| train tracks
+	| balloon
+	| zeta | weird nose
+	| lambda | upside down y
+	| b t | bravo tango
+;

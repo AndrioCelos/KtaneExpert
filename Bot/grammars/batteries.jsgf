@@ -1,0 +1,11 @@
+#JSGF V1.0 UTF-8 en;
+grammar batteries;
+import <main.*>;
+import <util.*>;
+
+public <root> = (
+	<command>
+	| [there are] none
+	| [there are] no batteries
+	| [there (is|are)] <digit> [battery | batteries] [in <digit> (holder | holders)]
+);

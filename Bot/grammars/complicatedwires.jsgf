@@ -1,0 +1,6 @@
+#JSGF V1.0 UTF-8 en;
+grammar complicatedwires;
+import <main.*>;
+import <util.*>;
+
+public <root> = <command> | (nothing | plain | red | blue | light | star | then | next)*;

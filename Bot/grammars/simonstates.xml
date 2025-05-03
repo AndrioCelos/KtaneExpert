@@ -1,9 +1,0 @@
-<grammar version='1.0' xml:lang='en-gb' root='root' xmlns='http://www.w3.org/2001/06/grammar'>
-	<rule id='root'>
-		<one-of>
-			<item><ruleref uri='bomb.xml'/></item>
-			<item repeat='1-5'><one-of><item> red </item><item> yellow </item><item> green </item><item> blue </item></one-of></item>
-			<item> all colours </item>
-		</one-of>
-	</rule>
-</grammar>

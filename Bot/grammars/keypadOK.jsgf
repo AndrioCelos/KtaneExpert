@@ -1,0 +1,6 @@
+#JSGF V1.0 UTF-8 en;
+grammar keypad-ok;
+import <main.*>;
+import <util.*>;
+
+public <root> = <command> | yes | no | ok;

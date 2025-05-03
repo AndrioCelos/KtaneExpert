@@ -1,0 +1,11 @@
+#JSGF V1.0 UTF-8 en;
+grammar ync;
+
+public <root> =
+	/2/ no
+	| /1/ yes
+	| /0.1/ yes and defused
+	| /0.1/ defused
+	| /0.1/ exploded
+	| /0.1/ new bomb
+;

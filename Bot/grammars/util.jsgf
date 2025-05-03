@@ -1,0 +1,44 @@
+#JSGF V1.0 UTF-8 en;
+grammar util;
+
+public <begin> = [start | begin | defuse | resume | next | next is | new] <module>;
+
+public <module> =
+	wires
+	| simple wires
+	| the button
+	| button
+	| keypad
+	| simon
+	| simon says
+	| who's on first
+	| words
+	| memory
+	| morse
+	| morse code
+	| complicated
+	| complicated wires
+	| sequence
+	| wire sequence
+	| panels
+	| wire panels
+	| maze
+	| password
+	| knob
+
+	| colour flash
+	| piano keys
+	| semaphore
+	| listening
+	| simon states
+	| silly slots
+	| laundry
+	| souvenir
+;
+
+public <letter> = alfa | bravo | charlie | delta | echo | foxtrot | golf | hotel | india | juliett | kilo | lima | mike | november | oscar | papa | quebec | romeo | sierra | tango | uniform | victor | whiskey | xray | yankee | zulu;
+public <digit> = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
+public <number2> = <digit> <digit>;
+public <letterordigit> = <letter> | <digit>;
+public <number> = none | <digit>;
+public <yesorno> = yes | affirmative | no | negative;

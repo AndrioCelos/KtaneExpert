@@ -1,0 +1,12 @@
+#JSGF V1.0 UTF-8 en;
+grammar ports;
+import <main.*>;
+import <util.*>;
+
+public <root> = <main.command>
+	| [there are] (none | no ports)
+	| done
+	| empty plate
+	| plate (parallel | serial)+
+	| plate (d v i | r j | p s 2 | [stereo] r c a)+
+;

@@ -1,0 +1,97 @@
+#JSGF V1.0 UTF-8 en;
+grammar whosonfirst;
+import <main.*>;
+import <util.*>;
+
+public <root> = <command>
+	| <label>
+	| got it
+	| next stage [is] <label>
+;
+
+<label> =
+	<letter>+
+	| literally blank
+	| literally nothing
+	| empty
+	| literally empty
+	| word blank
+	| blank
+	| nil
+	| letter c
+	| c letter
+	| charlie letter
+	| see spain
+	| display
+	| done
+	| first
+	| hold
+	| hold on
+	| led
+	| lead alfa
+	| lead guitar
+	| led
+	| led three letters
+	| led no alfa
+	| leed language
+	| leeds england
+	| leed two e's
+	| leed two echo
+	| left
+	| like
+	| middle
+	| next
+	| no
+	| nothing
+	| nothing word
+	| word nothing
+	| okay
+	| press
+	| read [a book]
+	| read alpha
+	| ready
+	| red colour
+	| colour red
+	| red three letters
+	| reed instrument
+	| right
+	| says
+	| see [a movie]
+	| sure
+	| their possessive
+	| their [with] (i | india)
+	| there location
+	| there two e's
+	| there two echo
+	| they are [two] words
+	| they space are
+	| they're [with] apostrophe
+	| they're contraction
+	| they apostrophe are
+	| letter u
+	| u letter
+	| uh huh positive
+	| uh uh negative
+	| staccato
+	| uhh
+	| u triple h
+	| letters u r
+	| u r letters
+	| wait
+	| what
+	| what no question [mark]
+	| what question [mark]
+	| yes
+	| you
+	| you word
+	| word you
+	| you are [two words | words]
+	| words you are
+	| you are two words
+	| you space are
+	| you apostrophe r e
+	| you're [with] apostrophe
+	| you're contraction
+	| your possessive
+	| your no apostrophe
+;

@@ -1,0 +1,36 @@
+#JSGF V1.0 UTF-8 en;
+grammar main;
+import <util.*>;
+
+public <command> =
+	/1/ <begin>
+	| /1/ next one
+	| /1/ next instance
+	| /1/ new instance
+	| /1/ solved
+	| /1/ begin the yes no challenge
+	| /1/ say again
+	| /1/ strike (zero | one | two | three)
+	| /0.2/ verify (code | serial | batteries | indicators | ports | rule seed)
+	| /0.2/ verification code
+	| /1/ new bomb
+	| /0.2/ solver test
+	| /0.2/ rule seed <digit>+
+	| /1/ edge work
+	| /1/ batteries
+	| /1/ indicators
+	| /1/ ports
+	| /1/ serial number
+	| /1/ we have turn the keys
+	| /1/ next module
+	| /1/ defuse laundry for <number> solves
+
+	// Needy module shortcuts
+	| /1/ knob <digit> <digit>
+	| /1/ knob (off | on)+
+	| /1/ rotary phone <digit> <digit> <digit>
+	| /1/ reset [the] rotary phone to <digit> <digit> <digit>
+
+	// Fun
+	| /1/ veemo
+;

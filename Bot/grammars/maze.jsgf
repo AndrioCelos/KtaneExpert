@@ -1,0 +1,9 @@
+#JSGF V1.0 UTF-8 en;
+grammar maze;
+import <main.*>;
+import <util.*>;
+
+public <root> = <command> | <column> <row>;
+
+<column> = alfa | bravo | charlie | delta | echo | foxtrot | 1 | 2 | 3 | 4 | 5 | 6;
+<row> = 1 | 2 | 3 | 4 | 5 | 6;

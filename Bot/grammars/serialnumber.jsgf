@@ -1,0 +1,10 @@
+#JSGF V1.0 UTF-8 en;
+grammar serialnumber;
+import <main.*>;
+import <util.*>;
+
+public <root> = <main.command>
+	| <yesorno>
+	| <digit>
+	| <letterordigit> <letterordigit> <digit> <letter> <letter> <digit>
+;
