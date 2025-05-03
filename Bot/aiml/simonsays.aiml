@@ -10,7 +10,7 @@
 				<condition name='YesNoChallenge'>
 					<li value='true'><srai>SimonPromptYNC</srai></li>
 					<li>
-						<oob>SetGrammar simonsays</oob><oob>SetPartialInput false</oob>
+						<srai>SetGrammar SimonSays</srai><srai>SetPartialInput off</srai>
 						Tell me which colours flash, in order.
 					</li>
 				</condition>

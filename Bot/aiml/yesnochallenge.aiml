@@ -15,7 +15,7 @@
 	<category><pattern>begin the yes no challenge</pattern>
 		<template>
 			<think><set name='YesNoChallenge'>true</set></think>
-			<oob><setgrammar>ync</setgrammar></oob>
+			<srai>SetGrammar YNC</srai>
 			<srai>YNCAskModule</srai>
 		</template>
 	</category>

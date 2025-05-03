@@ -59,7 +59,7 @@
 												<srai>Solver Keypad Keypad <get name='KeypadGlyph1'/> <get name='KeypadGlyph2'/> <get name='KeypadGlyph3'/> <get name='KeypadGlyph4'/></srai>
 											</set>
 										</think>
-										<oob>SetGrammar keypadOK</oob>
+										<srai>SetGrammar KeypadOK</srai>
 										<condition var='result'>
 											<li value='NoColumn'>
 												There seems to be no solution to that description. Please try again.
@@ -116,7 +116,7 @@
 					<set name='KeypadStage'>2</set>
 					<set name='topic'>keypad</set>
 				</think>
-				<oob>SetGrammar keypadOK</oob>
+				<srai>SetGrammar KeypadOK</srai>
 				<srai>KeypadResult <srai>Solver Keypad Start</srai></srai>
 			</template>
 		</category>

@@ -10,14 +10,14 @@
 						<li><sraix service='KtaneExpert.Solvers.MorseCodeSolver'><get name='RuleSeed'/> CacheWords</sraix></li>
 					</condition>
 				</think>
-				<oob><setpartialinput>on</setpartialinput></oob>
+				<srai>SetPartialInput on</srai>
 				Tell me part of the sequence of dashes, dots, spaces and the start of the word.
 			</template>
 		</category>
 
 		<category><pattern>DeselectModule</pattern>
 			<template>
-				<oob><setpartialinput>off</setpartialinput></oob>
+				<srai>SetPartialInput off</srai>
 			</template>
 		</category>
 

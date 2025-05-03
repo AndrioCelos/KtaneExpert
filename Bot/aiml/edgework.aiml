@@ -164,7 +164,7 @@
 			</think>
 			<condition name='YesNoChallenge'>
 				<li value='true'></li>
-				<li><oob><setgrammar><star/></setgrammar></oob></li>
+				<li><srai>SetGrammar <star/></srai></li>
 			</condition>
 		</template>
 	</category>
@@ -175,7 +175,7 @@
 			<think><set name='topic'><get name='EdgeworkCallbackTopic'/></set></think>
 			<condition name='YesNoChallenge'>
 				<li value='true'></li>
-				<li><oob><setgrammar><get name='topic'/></setgrammar></oob></li>
+				<li><srai>SetGrammar <get name='topic'/></srai></li>
 			</condition>
 			<srai><get name='EdgeworkCallback'/></srai>
 		</template>

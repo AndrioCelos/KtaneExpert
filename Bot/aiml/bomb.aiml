@@ -13,7 +13,8 @@
 				<set name='SouvenirCurrent'>0</set>
 				<set name='RotaryPhoneTotal'>0</set>
 			</think>
-			<oob><setgrammar>main</setgrammar><setpartialinput>off</setpartialinput></oob> OK
+			<srai>SetGrammar main</srai><srai>SetPartialInput off</srai>
+			OK
 		</template>
 	</category>
 	<category><pattern>strike <set>number</set></pattern>
@@ -80,8 +81,7 @@
 		<template>
 			<!-- TODO: For now, this is unclear about whether the previous module was solved or not. This matters if we need to count solves, or for Souvenir with duplicate modules. -->
 			<srai>DeselectModule</srai>
-			<think><set name='topic'><map name='ModuleCode'><star/></map></set></think>
-			<oob><setgrammar><map name='ModuleCode'><star/></map></setgrammar></oob>
+			<srai>SetGrammar <set name='topic'><map name='ModuleCode'><star/></map></set></srai>
 			<srai>SelectModule</srai>
 			<srai>InitModule</srai>
 		</template>
@@ -99,8 +99,7 @@
 	<category><pattern>resume <set>module</set></pattern>
 		<template>
 			<srai>DeselectModule</srai>
-			<think><set name='topic'><map name='ModuleCode'><star/></map></set></think>
-			<oob><setgrammar><map name='ModuleCode'><star/></map></setgrammar></oob>
+			<srai>SetGrammar <set name='topic'><map name='ModuleCode'><star/></map></set></srai>
 			<srai>SelectModule</srai>
 		</template>
 	</category>
@@ -241,6 +240,20 @@
 		</template>
 	</category>
 
+	<category><pattern>SetGrammar *</pattern>
+		<template>
+			<!-- Switch speech grammar if running in Angel AIML; do nothing otherwise. -->
+			<think><set var='program'><first><program/></first></set></think>
+			<condition var='program' value='Angel'><oob><setgrammar><star/></setgrammar></oob></condition>
+		</template>
+	</category>
+	<category><pattern>SetPartialInput *</pattern>
+		<template>
+			<!-- Set partial input if running in Angel AIML; do nothing otherwise. -->
+			<think><set var='program'><first><program/></first></set></think>
+			<condition var='program' value='Angel'><oob><setpartialinput><star/></setpartialinput></oob></condition>
+		</template>
+	</category>
 
 	<!-- Verification -->
 	<category><pattern>verify rule seed</pattern>
