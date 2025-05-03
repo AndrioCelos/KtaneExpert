@@ -1,15 +1,16 @@
 [
-	[ " who's "         , " who is "      ],
-	[ " you're "        , " you are "      ],
-	[ "'"               , " "             ],
-	[ ","               , " "             ],
-	[ " upside-down "   , " upside down " ],
-	[ " X-ray "         , " Xray "        ],
+	[ " who's ", " who is " ],
+	[ " you're ", " you are " ],
+	[ ",", " " ],
+	[ " upside-down ", " upside down " ],
+	[ " X-ray ", " Xray " ],
+
 	// Shortcuts for typing Morse code strings
-	[ "-"               , " dash "        ],
-	[ "+"               , " dot "         ],
-	[ "*"               , " space "       ],
-	[ " dick "          , " penis "       ],
+	[ "-", " dash " ],
+	[ "+", " dot " ],
+	[ "*", " space " ],
+	
+	[ " dick ", " penis " ],
 	// Really, several of the keypad glyphs can be described that way.
-	[ " backwards "     , " backward "    ]
+	[ " backwards ", " backward " ]
 ]

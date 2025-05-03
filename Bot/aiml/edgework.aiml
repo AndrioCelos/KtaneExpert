@@ -13,6 +13,9 @@
 	<category><pattern>edgework</pattern>
 		<template><srai>ManualEdgeworkQuery Batteries Indicators PortPlates SerialNumber</srai></template>
 	</category>
+	<category><pattern>edge work</pattern>
+		<template><srai>edgework</srai></template>
+	</category>
 	<category><pattern>batteries</pattern>
 		<template>
 			<srai>EdgeworkQuery Batteries XS ManualEdgeworkQuery nil</srai>
@@ -159,7 +162,10 @@
 				<set name='EdgeworkCallbackTopic'><get name='topic'/></set>
 				<set name='topic'>Edgework <star index='2'/></set>
 			</think>
-			<oob><enablegrammar><star/></enablegrammar></oob>
+			<condition name='YesNoChallenge'>
+				<li value='true'></li>
+				<li><oob><setgrammar><star/></setgrammar></oob></li>
+			</condition>
 		</template>
 	</category>
 	<!-- Usage: EdgeworkQueryStart <grammar> -->
@@ -167,7 +173,10 @@
 	<category><pattern>EdgeworkQueryCallback *</pattern>
 		<template>
 			<think><set name='topic'><get name='EdgeworkCallbackTopic'/></set></think>
-			<oob><disablegrammar><star/></disablegrammar></oob>
+			<condition name='YesNoChallenge'>
+				<li value='true'></li>
+				<li><oob><setgrammar><get name='topic'/></setgrammar></oob></li>
+			</condition>
 			<srai><get name='EdgeworkCallback'/></srai>
 		</template>
 	</category>

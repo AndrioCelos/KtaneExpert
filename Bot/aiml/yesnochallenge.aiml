@@ -58,7 +58,7 @@
 		<that>Shall we disarm another *</that>
 		<template>
 			<srai>DeselectModule</srai>
-			<think><set name='topic'>Bomb</set></think>
+			<think><set name='topic'>root</set></think>
 			<srai>YNCAskModule</srai>
 		</template>
 	</category>
@@ -100,6 +100,7 @@
 	</category>
 
 	<category><pattern>YNCAskModule</pattern>
+		<topic>root</topic>
 		<template>Does the module have wires?</template>
 	</category>
 	<category><pattern>yes</pattern>

@@ -13,7 +13,7 @@
 				<set name='SouvenirCurrent'>0</set>
 				<set name='RotaryPhoneTotal'>0</set>
 			</think>
-			<oob>SetGrammar bomb</oob><oob>SetPartialInput false</oob> OK
+			<oob><setgrammar>main</setgrammar><setpartialinput>off</setpartialinput></oob> OK
 		</template>
 	</category>
 	<category><pattern>strike <set>number</set></pattern>

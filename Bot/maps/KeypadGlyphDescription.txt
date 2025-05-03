@@ -8,6 +8,7 @@ SquidKnife  : squid with a knife
 Pumpkin     : pumpkin
 HookN       : hooked H
 Teepee      : tent
+6           : six
 Six         : six
 SquigglyN   : lightning
 AT          : pyramid

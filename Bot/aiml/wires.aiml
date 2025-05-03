@@ -212,7 +212,7 @@
 					<set var='temp'><srai>XCompareDigits <srai>XCountMatch red XS <star/> <star index='2'/> <star index='3'/> <star index='4'/></srai> XS 1</srai></set>
 					<condition var='temp' value='1'>
 						<condition name='SerialNumberIsOdd'>
-							<li value='true'><set var='result'><srai>XItem <srai>XLastIndex red XS <star/> XS <star index='2'/> <star index='3'/> <star index='4'/></srai> CutFirstWire CutSecondWire CutThirdWire CutLastWire</srai></set></li>
+							<li value='true'><set var='result'><srai>XItem <srai>XLastIndex red XS <star/> <star index='2'/> <star index='3'/> <star index='4'/></srai> XS CutFirstWire CutSecondWire CutThirdWire CutLastWire</srai></set></li>
 							<li value='unknown'><set var='result'>NeedEdgework SerialNumberIsOdd</set></li>
 						</condition>
 					</condition>
