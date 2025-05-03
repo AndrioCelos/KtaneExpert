@@ -192,7 +192,7 @@
 		<!-- A simple test to make sure the library is loaded properly. -->
 		<template>
 			<think>
-				<set var='result'><sraix service='BombExpert.Solvers.WiresSolver'>1 blue blue blue</sraix></set>
+				<set var='result'><sraix service='KtaneExpert.Solvers.WiresSolver'>1 blue blue blue</sraix></set>
 			</think>
 			<condition var='result'>
 				<li value='CutSecondWire'>
@@ -286,7 +286,7 @@
 				<condition name='SraixUnavailable'>
 					<li value='true'></li>
 					<li>
-						<set var='result'><sraix><service>BombExpert.Solvers.<star/>Solver</service><get var='params'/></sraix></set>
+						<set var='result'><sraix><service>KtaneExpert.Solvers.<star/>Solver</service><get var='params'/></sraix></set>
 						<condition var='result' value='SolverError'>
 							<set name='SraixUnavailable'>true</set>
 						</condition>

@@ -7,7 +7,7 @@
 					<!-- Pre-generate the word list, as this takes a long time. -->
 					<condition name='SraixUnavailable'>
 						<li value='true'></li>
-						<li><sraix service='BombExpert.Solvers.MorseCodeSolver'><get name='RuleSeed'/> CacheWords</sraix></li>
+						<li><sraix service='KtaneExpert.Solvers.MorseCodeSolver'><get name='RuleSeed'/> CacheWords</sraix></li>
 					</condition>
 				</think>
 				<oob><setpartialinput>on</setpartialinput></oob>

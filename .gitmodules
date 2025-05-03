@@ -1,0 +1,3 @@
+[submodule "Solvers/AngelAiml"]
+	path = Solvers/AngelAiml
+	url = https://github.com/AndrioCelos/AngelAiml/

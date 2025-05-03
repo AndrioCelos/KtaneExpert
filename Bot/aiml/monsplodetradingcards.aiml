@@ -201,7 +201,7 @@
 								</li>
 							</condition>
 
-							<set var='value'><sraix service='BombExpert.Multiply'><get var='value'/> <get var='multiplier'/></sraix></set>
+							<set var='value'><sraix service='KtaneExpert.Multiply'><get var='value'/> <get var='multiplier'/></sraix></set>
 						</li>
 					</condition>
 				</think>

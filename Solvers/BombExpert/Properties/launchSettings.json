@@ -1,9 +1,0 @@
-{
-  "profiles": {
-    "BombExpert": {
-      "commandName": "Executable",
-      "executablePath": "C:\\Program Files\\dotnet\\dotnet.exe",
-      "commandLineArgs": "D:\\Users\\Andrea\\Dropbox\\Projects\\Aiml\\AimlConsoleBot\\bin\\Debug\\netcoreapp2.1\\AimlConsoleBot.dll -s D:\\Users\\Andrea\\Dropbox\\Projects\\BombExpert\\Solvers\\BombExpert\\bin\\Debug\\netstandard2.0\\BombExpert.dll D:\\Users\\Andrea\\Dropbox\\Projects\\BombExpert\\Bot"
-    }
-  }
-}
