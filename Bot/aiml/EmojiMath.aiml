@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+	<topic name='EmojiMath'>
+		<category><pattern>SelectModule</pattern>
+			<template>Emoji Math: read the symbols.</template>
+		</category>
+
+		<category><pattern>* plus *</pattern>
+			<template><srai>Process plus XS <star/> XS <star index='2'/></srai></template>
+		</category>
+
+		<category><pattern>* minus *</pattern>
+			<template><srai>Process minus XS <star/> XS <star index='2'/></srai></template>
+		</category>
+
+		<category><pattern>Process * XS * XS *</pattern>
+			<template>
+				<think>
+					<set var='operation'><star/></set>
+					<set var='n1'><srai>ParseNumber <star index='2'/></srai></set>
+					<set var='n2'><srai>ParseNumber <star index='3'/></srai></set>
+					<set var='error'><condition><li var='n1' value='Error'>true</li><li var='n2' value='Error'>true</li><li>false</li></condition></set>
+				</think>
+				<condition var='error'>
+					<li value='true'>That does not seem to be a valid display. Please try again.</li>
+					<li>
+						<condition var='operation'>
+							<li value='plus'><srai>XAdd <get var='n1'/> XS <get var='n2'/></srai></li>
+							<li value='minus'><srai>XSubtract <get var='n1'/> XS <get var='n2'/></srai></li>
+							<li>Something went wrong. Please try again.</li>
+						</condition>
+					</li>
+				</condition>
+			</template>
+		</category>
+
+		<category><pattern>ParseNumber *</pattern>
+			<template>
+				<think>
+					<set var='words'><star/></set>
+					<set var='code'>nil</set>
+					<set var='n'></set>
+					<condition var='words'>
+						<li value='nil'></li>
+						<li>
+							<set var='word'><first><get var='words'/></first></set>
+							<set var='words'><rest><get var='words'/></rest></set>
+							<!-- Parse the digit if two symbols have been read. -->
+							<condition var='code'>
+								<li value='nil'><set var='code'><get var='word'/></set></li>
+								<li>
+									<set var='digit'><srai>ParseDigit <get var='code'/> <get var='word'/></srai></set>
+									<set var='code'>nil</set>
+									<condition var='digit'>
+										<li value='error'><set var='error'>true</set><set var='words'>nil</set></li>
+										<li><set var='n'><get var='n'/><get var='digit'/></set></li>
+									</condition>
+								</li>
+							</condition>
+							<loop/>
+						</li>
+					</condition>
+				</think>
+				<condition var='error'>
+					<li value='*'>Error</li>
+					<li><get var='n'/></li>
+				</condition>
+			</template>
+		</category>
+
+		<category><pattern>ParseDigit colon right</pattern><template>0</template></category>
+		<category><pattern>ParseDigit equal left</pattern><template>1</template></category>
+		<category><pattern>ParseDigit left colon</pattern><template>2</template></category>
+		<category><pattern>ParseDigit right equal</pattern><template>3</template></category>
+		<category><pattern>ParseDigit colon left</pattern><template>4</template></category>
+		<category><pattern>ParseDigit right colon</pattern><template>5</template></category>
+		<category><pattern>ParseDigit equal right</pattern><template>6</template></category>
+		<category><pattern>ParseDigit left equal</pattern><template>7</template></category>
+		<category><pattern>ParseDigit colon bar</pattern><template>8</template></category>
+		<category><pattern>ParseDigit bar colon</pattern><template>9</template></category>
+		<category><pattern>ParseDigit *</pattern><template>error</template></category>
+	</topic>
+</aiml>

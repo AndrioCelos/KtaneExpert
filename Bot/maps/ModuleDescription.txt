@@ -11,13 +11,14 @@ Maze                 :Maze
 Password             :Password
 Knob                 :Knob
 
-ColourFlash          :Colour Flash
-Listening            :Listening
-SimonStates          :Simon States
-SillySlots           :Silly Slots
-Laundry              :Laundry
-Souvenir             :Souvenir
-Hexamaze             :Hexamaze
-ThirdBase            :Third Base
 AdventureGame        :Adventure Game
+ColourFlash          :Colour Flash
+EmojiMath            :Emoji Math
+Hexamaze             :Hexamaze
+Laundry              :Laundry
+Listening            :Listening
 PianoKeys            :Piano Keys
+SillySlots           :Silly Slots
+SimonStates          :Simon States
+Souvenir             :Souvenir
+ThirdBase            :Third Base

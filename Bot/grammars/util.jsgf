@@ -27,12 +27,13 @@ public <module> =
 	| knob
 
 	| colour flash
+	| emoji math
+	| laundry
+	| listening
 	| piano keys
 	| semaphore
-	| listening
-	| simon states
 	| silly slots
-	| laundry
+	| simon states
 	| souvenir
 ;
 

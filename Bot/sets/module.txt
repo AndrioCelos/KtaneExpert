@@ -1,1 +1,34 @@
-map:ModuleCode
+Wires
+Simple Wires
+Button
+The Button
+Keypad
+Simon Says
+Who's on First
+Who is on First
+Words
+Memory
+Morse Code
+Complicated
+Complicated Wires
+Sequence
+Wire Sequence
+Wire Sequences
+Panels
+Wire Panels
+Maze
+Password
+Knob
+
+Adventure Game
+Colour Flash
+Emoji Math
+Hexamaze
+Laundry
+Listening
+Piano Keys
+Semaphore
+Silly Slots
+Simon States
+Souvenir
+Third Base
