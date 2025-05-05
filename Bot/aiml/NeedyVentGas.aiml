@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml>
-	<topic name='VentingGas'>
+	<topic name='NeedyVentGas'>
 		<category><pattern>SelectModule</pattern>
 			<template>Respond to the computer prompts by pressing "Y" for "Yes" or "N" for "No".</template>
 		</category>

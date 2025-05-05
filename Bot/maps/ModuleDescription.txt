@@ -1,15 +1,17 @@
-Wires                :Wires
 Button               :The Button
+ComplicatedWires     :Complicated Wires
 Keypad               :Keypad
-SimonSays            :Simon Says
-WhosOnFirst          :Who's on First
+Maze                 :Maze
 Memory               :Memory
 MorseCode            :Morse Code
-ComplicatedWires     :Complicated Wires
-WireSequence         :Wire Sequence
-Maze                 :Maze
+NeedyCapacitor       :Needy Capacitor
+NeedyKnob            :Needy Knob
+NeedyVentGas         :Needy Vent Gas
 Password             :Password
-Knob                 :Knob
+SimonSays            :Simon Says
+WhosOnFirst          :Who's on First
+Wires                :Wires
+WireSequence         :Wire Sequence
 
 AdventureGame        :Adventure Game
 ColourFlash          :Colour Flash

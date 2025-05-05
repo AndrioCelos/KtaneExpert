@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml>
-	<topic name='CapacitorDischarge'>
+	<topic name='NeedyCapacitor'>
 		<category><pattern>SelectModule</pattern>
 			<template>Hold down the lever to discharge the capacitor and prevent it from overcharging.</template>
 		</category>

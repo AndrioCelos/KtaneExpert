@@ -1,24 +1,25 @@
-Wires
-Simple Wires
 Button
-The Button
-Keypad
-Simon Says
-Who's on First
-Who is on First
-Words
-Memory
-Morse Code
 Complicated
 Complicated Wires
+Keypad
+Knob
+Maze
+Memory
+Morse Code
+Needy Knob
+Panels
+Password
 Sequence
+Simon Says
+Simple Wires
+The Button
+Who is on First
+Who's on First
+Wire Panels
 Wire Sequence
 Wire Sequences
-Panels
-Wire Panels
-Maze
-Password
-Knob
+Wires
+Words
 
 Adventure Game
 Anagrams

@@ -18,7 +18,8 @@ Panels                                        :WireSequence
 Wire Panels                                   :WireSequence
 Maze                                          :Maze
 Password                                      :Password
-Knob                                          :Knob
+Knob                                          :NeedyKnob
+Needy Knob                                    :NeedyKnob
 
 Adventure Game                                :AdventureGame
 Anagrams                                      :WordScramble

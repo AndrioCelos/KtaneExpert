@@ -28,18 +28,18 @@
 	</category>
 
 	<category><pattern>YNCAskNeedyModule</pattern>
-		<template>Is the needy module a Knob?</template>
+		<template>Is the needy module a knob?</template>
 	</category>
 
 	<category><pattern>yes</pattern>
-		<that>^ Is the needy module a Knob</that>
+		<that>^ Is the needy module a knob</that>
 		<template>
-			<think><set name='NeedyModules'>knob</set></think>
+			<think><set name='NeedyModules'>NeedyKnob</set></think>
 			<srai>YNCAskModule</srai>
 		</template>
 	</category>
 	<category><pattern>no</pattern>
-		<that>^ Is the needy module a Knob</that>
+		<that>^ Is the needy module a knob</that>
 		<template>
 			<think><set name='NeedyModules'>nil</set></think>
 			<srai>YNCAskModule</srai>

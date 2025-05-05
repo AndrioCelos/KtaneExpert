@@ -4,31 +4,31 @@
 		<template><srai>knob <star/></srai></template>
 	</category>
 	<category><pattern>knob all *</pattern>
-		<template><srai>KnobSetup</srai><srai>Knob HandleInput <star/> <star/> <star/> <star/> <star/> <star/> <star/> <star/> <star/> <star/> <star/> <star/></srai></template>
+		<template><srai>NeedyKnobSetup</srai><srai>NeedyKnob HandleInput <star/> <star/> <star/> <star/> <star/> <star/> <star/> <star/> <star/> <star/> <star/> <star/></srai></template>
 	</category>
 	<category><pattern>knob on *</pattern>
-		<template><srai>KnobSetup</srai><srai>Knob HandleInput on <star/></srai></template>
+		<template><srai>NeedyKnobSetup</srai><srai>NeedyKnob HandleInput on <star/></srai></template>
 	</category>
 	<category><pattern>knob off *</pattern>
-		<template><srai>KnobSetup</srai><srai>Knob HandleInput off <star/></srai></template>
+		<template><srai>NeedyKnobSetup</srai><srai>NeedyKnob HandleInput off <star/></srai></template>
 	</category>
 	<category><pattern>knob <set>number</set> *</pattern>
-		<template><srai>KnobSetup</srai><srai>Knob HandleInput <star/> <star index='2'/></srai></template>
+		<template><srai>NeedyKnobSetup</srai><srai>NeedyKnob HandleInput <star/> <star index='2'/></srai></template>
 	</category>
 
-	<category><pattern>KnobSetup</pattern>
+	<category><pattern>NeedyKnobSetup</pattern>
 		<template>
 			<think>
-				<set var='result'><srai>Solver Knob GetPattern</srai></set>
+				<set var='result'><srai>Solver NeedyKnob GetPattern</srai></set>
 				<set name='KnobPattern'><srai>XFirst <get var='result'/></srai></set>
 				<set name='KnobIndices'><srai>XRest <get var='result'/></srai></set>
 			</think>
 		</template>
 	</category>
 
-	<topic name='Knob'>
+	<topic name='NeedyKnob'>
 		<category><pattern>SelectModule</pattern>
-			<template><srai>KnobSetup</srai></template>
+			<template><srai>NeedyKnobSetup</srai></template>
 		</category>
 		<category><pattern>InitModule</pattern>
 			<template>
@@ -53,22 +53,22 @@
 
 		<category><pattern>on *</pattern>
 			<template>
-				<srai>Knob HandleInput on <star/></srai>
+				<srai>NeedyKnob HandleInput on <star/></srai>
 			</template>
 		</category>
 		<category><pattern>off *</pattern>
 			<template>
-				<srai>Knob HandleInput off <star/></srai>
+				<srai>NeedyKnob HandleInput off <star/></srai>
 			</template>
 		</category>
 		<category><pattern>all *</pattern>
 			<template>
-				<srai>Knob HandleInput <star/> <star/> <star/> <star/> <star/> <star/> <star/> <star/> <star/> <star/> <star/> <star/></srai>
+				<srai>NeedyKnob HandleInput <star/> <star/> <star/> <star/> <star/> <star/> <star/> <star/> <star/> <star/> <star/> <star/></srai>
 			</template>
 		</category>
 		<category><pattern><set>number</set> <set>number</set></pattern>
 			<template>
-				<think><set var='result'><srai>Solver Knob Counts <first><get name='KnobIndices'/></first>:<star index='1'/> <rest><get name='KnobIndices'/></rest>:<star index='2'/></srai></set></think>
+				<think><set var='result'><srai>Solver NeedyKnob Counts <first><get name='KnobIndices'/></first>:<star index='1'/> <rest><get name='KnobIndices'/></rest>:<star index='2'/></srai></set></think>
 				<condition var='result'>
 					<li value='NotEnoughStates'>You did not say enough numbers. Try again.</li>
 					<li value='BadInputState'>I do not recognise that input. Try again.</li>
@@ -80,7 +80,7 @@
 		</category>
 	</topic>
 
-	<category><pattern>Knob HandleInput *</pattern>
+	<category><pattern>NeedyKnob HandleInput *</pattern>
 		<template>
 			<think>
 				<set var='input'><star/></set>
@@ -121,7 +121,7 @@
 					</li>
 				</condition>
 				<condition var='result' value='unknown'>
-					<set var='result'><srai>Solver Knob <condition name='KnobPattern'><li value='Counts'>Counts</li><li>Lights</li></condition> <get var='query'/></srai></set>
+					<set var='result'><srai>Solver NeedyKnob <condition name='KnobPattern'><li value='Counts'>Counts</li><li>Lights</li></condition> <get var='query'/></srai></set>
 				</condition>
 			</think>
 			<condition var='result'>
@@ -135,70 +135,70 @@
 		</template>
 	</category>
 
-	<!-- Usage: Solver Knob GetPattern -->
+	<!-- Usage: Solver NeedyKnob GetPattern -->
 	<!--
 		Returns [Selection] [Indices]
 			[Selection] indicates which lights to ask for or Counts.
 			[Indices] specifies the zero-based indices or group descriptions that this question corresponds to.
 	-->
-	<category><pattern>SolverFallback Knob 1 GetPattern</pattern>
+	<category><pattern>SolverFallback NeedyKnob 1 GetPattern</pattern>
 		<template>Counts left right</template>
 	</category>
 
-	<!-- Usage: Solver Knob Counts ([group]:[count])+ -->
+	<!-- Usage: Solver NeedyKnob Counts ([group]:[count])+ -->
 	<!-- Returns the correct direction or 'unknown'. -->
-	<category><pattern>SolverFallback Knob 1 Counts left:4 right:4</pattern>
+	<category><pattern>SolverFallback NeedyKnob 1 Counts left:4 right:4</pattern>
 		<template>Up</template>
 	</category>
-	<category><pattern>SolverFallback Knob 1 Counts left:4 right:3</pattern>
+	<category><pattern>SolverFallback NeedyKnob 1 Counts left:4 right:3</pattern>
 		<template>Up</template>
 	</category>
-	<category><pattern>SolverFallback Knob 1 Counts left:5 right:3</pattern>
+	<category><pattern>SolverFallback NeedyKnob 1 Counts left:5 right:3</pattern>
 		<template>Down</template>
 	</category>
-	<category><pattern>SolverFallback Knob 1 Counts left:3 right:2</pattern>
+	<category><pattern>SolverFallback NeedyKnob 1 Counts left:3 right:2</pattern>
 		<template>Down</template>
 	</category>
-	<category><pattern>SolverFallback Knob 1 Counts left:1 right:4</pattern>
+	<category><pattern>SolverFallback NeedyKnob 1 Counts left:1 right:4</pattern>
 		<template>Left</template>
 	</category>
-	<category><pattern>SolverFallback Knob 1 Counts left:0 right:3</pattern>
+	<category><pattern>SolverFallback NeedyKnob 1 Counts left:0 right:3</pattern>
 		<template>Left</template>
 	</category>
-	<category><pattern>SolverFallback Knob 1 Counts left:5 right:4</pattern>
+	<category><pattern>SolverFallback NeedyKnob 1 Counts left:5 right:4</pattern>
 		<template>Right</template>
 	</category>
-	<category><pattern>SolverFallback Knob 1 Counts left:5 right:2</pattern>
+	<category><pattern>SolverFallback NeedyKnob 1 Counts left:5 right:2</pattern>
 		<template>Right</template>
 	</category>
-	<category><pattern>SolverFallback Knob 1 Counts *</pattern>
+	<category><pattern>SolverFallback NeedyKnob 1 Counts *</pattern>
 		<template>unknown</template>
 	</category>
 
-	<!-- Usage: Solver Knob Lights ([index]:[state])+ -->
+	<!-- Usage: Solver NeedyKnob Lights ([index]:[state])+ -->
 	<!-- Returns the correct direction or 'unknown'. States are 'on' and 'off'. -->
-	<category><pattern>SolverFallback Knob 1 Lights 0:off 1:off 2:on 6:on 7:on 8:on</pattern>
+	<category><pattern>SolverFallback NeedyKnob 1 Lights 0:off 1:off 2:on 6:on 7:on 8:on</pattern>
 		<template>Up</template>
 	</category>
-	<category><pattern>SolverFallback Knob 1 Lights 0:on 1:off 2:on 6:off 7:on 8:on</pattern>
+	<category><pattern>SolverFallback NeedyKnob 1 Lights 0:on 1:off 2:on 6:off 7:on 8:on</pattern>
 		<template>Up</template>
 	</category>
-	<category><pattern>SolverFallback Knob 1 Lights 0:off 1:on 2:on 6:on 7:on 8:on</pattern>
+	<category><pattern>SolverFallback NeedyKnob 1 Lights 0:off 1:on 2:on 6:on 7:on 8:on</pattern>
 		<template>Down</template>
 	</category>
-	<category><pattern>SolverFallback Knob 1 Lights 0:on 1:off 2:on 6:off 7:on 8:off</pattern>
+	<category><pattern>SolverFallback NeedyKnob 1 Lights 0:on 1:off 2:on 6:off 7:on 8:off</pattern>
 		<template>Down</template>
 	</category>
-	<category><pattern>SolverFallback Knob 1 Lights 0:off 1:off 2:off 6:on 7:off 8:off</pattern>
+	<category><pattern>SolverFallback NeedyKnob 1 Lights 0:off 1:off 2:off 6:on 7:off 8:off</pattern>
 		<template>Left</template>
 	</category>
-	<category><pattern>SolverFallback Knob 1 Lights 0:off 1:off 2:off 6:off 7:off 8:off</pattern>
+	<category><pattern>SolverFallback NeedyKnob 1 Lights 0:off 1:off 2:off 6:off 7:off 8:off</pattern>
 		<template>Left</template>
 	</category>
-	<category><pattern>SolverFallback Knob 1 Lights 0:on 1:off 2:on 6:on 7:on 8:on</pattern>
+	<category><pattern>SolverFallback NeedyKnob 1 Lights 0:on 1:off 2:on 6:on 7:on 8:on</pattern>
 		<template>Right</template>
 	</category>
-	<category><pattern>SolverFallback Knob 1 Lights *</pattern>
+	<category><pattern>SolverFallback NeedyKnob 1 Lights *</pattern>
 		<template>unknown</template>
 	</category>
 </aiml>
