@@ -435,5 +435,37 @@
 	<category><pattern>XImplode * * * * * * * *</pattern>
 		<template><star/><star index='2'/><star index='3'/><star index='4'/><star index='5'/><star index='6'/><srai>XImplode <star index='7'/></srai></template>
 	</category>
+
+	<!-- Usage: XPermutations [list ...] -->
+	<!-- Returns all permutations of the list, separated by XS. -->
+	<category><pattern>XPermutations *</pattern>
+		<template><rest><srai>XPermutationsInternal nil XS <star/></srai></rest></template>
+	</category>
+	<category><pattern>XPermutationsInternal * XS nil</pattern>
+		<template>XS <star/></template>
+	</category>
+	<category><pattern>XPermutationsInternal * XS *</pattern>
+		<template>
+			<think>
+				<set var='fixedElements'><star/></set>
+				<set var='list'><star index='2'/></set>
+				<set var='prev'></set>
+			</think>
+			<!-- Fix each element as the first element and recursively permute the remaining elements. -->
+			<condition var='list'>
+				<li value='nil'></li>
+				<li>
+					<think>
+						<set var='first'><srai>XFirst <get var='list'/></srai></set>
+						<set var='list'><srai>XRest <get var='list'/></srai></set>
+					</think>
+					<srai>XPermutationsInternal <srai>XAppend <get var='first'/> XS <get var='fixedElements'/></srai> XS <get var='prev'/> <get var='list'/></srai>
+					<think>
+						<set var='prev'><get var='prev'/> <get var='first'/></set>
+					</think>
+					<loop/>
+				</li>
+			</condition>
+		</template>
 	</category>
 </aiml>

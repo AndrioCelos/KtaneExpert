@@ -21,6 +21,7 @@ Password
 Knob
 
 Adventure Game
+Anagrams
 Colour Flash
 Emoji Math
 Hexamaze
@@ -32,3 +33,4 @@ Silly Slots
 Simon States
 Souvenir
 Third Base
+Word Scramble

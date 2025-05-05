@@ -26,6 +26,7 @@ public <module> =
 	| password
 	| knob
 
+	| anagrams
 	| colour flash
 	| emoji math
 	| laundry
@@ -35,6 +36,7 @@ public <module> =
 	| silly slots
 	| simon states
 	| souvenir
+	| word scramble
 ;
 
 public <letter> = alfa | bravo | charlie | delta | echo | foxtrot | golf | hotel | india | juliett | kilo | lima | mike | november | oscar | papa | quebec | romeo | sierra | tango | uniform | victor | whiskey | xray | yankee | zulu;

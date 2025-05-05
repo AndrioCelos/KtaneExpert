@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+	<topic name='WordScramble'>
+		<category><pattern>SelectModule</pattern>
+			<template>Word Scramble: Read the letters.</template>
+		</category>
+
+		<category><pattern><set>NATO</set> <set>NATO</set> <set>NATO</set> <set>NATO</set> <set>NATO</set> <set>NATO</set></pattern>
+			<template>
+				<!-- Skip the first permutation because that is the original word, which is not a valid answer. -->
+				<srai>ProcessLetters <srai>XRest2 <srai>XPermutations
+					<map name='nato'><star index='1'/></map>
+					<map name='nato'><star index='2'/></map>
+					<map name='nato'><star index='3'/></map>
+					<map name='nato'><star index='4'/></map>
+					<map name='nato'><star index='5'/></map>
+					<map name='nato'><star index='6'/></map>
+				</srai></srai></srai>
+			</template>
+		</category>
+
+		<!-- Usage: XFirst2 [list ...] XS [list ...] XS ...-->
+		<!-- Returns the first element of a list of lists, separated by XS. -->
+		<category><pattern>XFirst2 * XS *</pattern>
+			<template><star/></template>
+		</category>
+		<category><pattern>XFirst2 *</pattern>
+			<template><star/></template>
+		</category>
+		<!-- Usage: XRest2 [list ...] XS [list ...] XS ...-->
+		<!-- Returns the elements of a list of lists excluding the first, separated by XS, or nil if there is no more than one element. -->
+		<category><pattern>XRest2 * XS *</pattern>
+			<template><star index='2'/></template>
+		</category>
+		<category><pattern>XRest2 *</pattern>
+			<template>nil</template>
+		</category>
+
+		<category><pattern>ProcessLetters *</pattern>
+			<template>
+				<think>
+					<set var='list'><star/></set>
+					<set var='limit'>98</set>
+				</think>
+				<condition var='list'>
+					<li value='nil'>No word was found.</li>
+					<li value='XBreak'></li>
+					<li>
+						<condition var='limit'>
+							<li value='0'>
+								<!-- Recursive call to circumvent the default loop limit. -->
+								<srai>ProcessLetters <get var='list'/></srai>
+								<think><set var='list'>XBreak</set></think>
+							</li>
+							<li>
+								<think>
+									<set var='limit'><map name='predecessor'><get var='limit'/></map></set>
+									<set var='word'><srai>XImplode <srai>XFirst2 <get var='list'/></srai></srai></set>
+									<set var='list'><srai>XRest2 <get var='list'/></srai></set>
+									<set var='isWord'><srai>IsWord <get var='word'/></srai></set>
+								</think>
+								<condition var='isWord'>
+									<li value='true'>
+										<lowercase><get var='word'/></lowercase>
+										<think><set var='list'>XBreak</set></think>
+									</li>
+								</condition>
+							</li>
+						</condition>
+						<loop/>
+					</li>
+				</condition>
+			</template>
+		</category>
+
+		<category><pattern>IsWord <set>WordScrambleWord</set></pattern>
+			<template>true</template>
+		</category>
+		<category><pattern>IsWord *</pattern>
+			<template>false</template>
+		</category>
+	</topic>
+</aiml>

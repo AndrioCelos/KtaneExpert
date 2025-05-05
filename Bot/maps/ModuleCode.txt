@@ -21,6 +21,7 @@ Password                                      :Password
 Knob                                          :Knob
 
 Adventure Game                                :AdventureGame
+Anagrams                                      :WordScramble
 Colour Flash                                  :ColourFlash
 Emoji Math                                    :EmojiMath
 Hexamaze                                      :Hexamaze
@@ -32,3 +33,4 @@ Silly Slots                                   :SillySlots
 Simon States                                  :SimonStates
 Souvenir                                      :Souvenir
 Third Base                                    :ThirdBase
+Word Scramble                                 :WordScramble
