@@ -1,5 +1,5 @@
 #JSGF V1.0 UTF-8 en;
-grammar keypad-ok;
+grammar Keypad-OK;
 import <main.*>;
 import <util.*>;
 

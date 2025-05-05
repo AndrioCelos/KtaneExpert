@@ -1,5 +1,5 @@
 #JSGF V1.0 UTF-8 en;
-grammar indicators;
+grammar Indicators;
 import <main.*>;
 import <util.*>;
 

@@ -1,5 +1,5 @@
 #JSGF V1.0 UTF-8 en;
-grammar whosonfirst;
+grammar WhosOnFirst;
 import <main.*>;
 import <util.*>;
 

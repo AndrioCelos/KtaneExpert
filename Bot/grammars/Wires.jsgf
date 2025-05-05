@@ -1,5 +1,5 @@
 #JSGF V1.0 UTF-8 en;
-grammar wires;
+grammar Wires;
 import <main.*>;
 import <util.*>;
 

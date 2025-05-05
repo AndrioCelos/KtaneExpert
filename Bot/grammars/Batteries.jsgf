@@ -1,5 +1,5 @@
 #JSGF V1.0 UTF-8 en;
-grammar batteries;
+grammar Batteries;
 import <main.*>;
 import <util.*>;
 
