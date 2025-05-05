@@ -162,24 +162,15 @@
 		<template><star index='6'/></template>
 	</category>
 	<category><pattern>XLast * * * * * * *</pattern>
-		<template><star index='7'/></template>
-	</category>
-	<category><pattern>XLast * * * * * * * *</pattern>
-		<template><star index='8'/></template>
-	</category>
-	<category><pattern>XLast * * * * * * * * *</pattern>
-		<template><star index='9'/></template>
-	</category>
-	<category><pattern>XLast * * * * * * * * * *</pattern>
 		<template>
 			<think>
-				<set var='items'><star index='10'/></set>
-				<set var='rest'><rest><get var='items'/></rest></set>
+				<set var='items'><star index='7'/></set>
+				<set var='rest'><srai>XRest <get var='items'/></srai></set>
 				<condition var='rest'>
 					<li value='nil'></li>
 					<li>
 						<set var='items'><get var='rest'/></set>
-						<set var='rest'><rest><get var='items'/></rest></set>
+						<set var='rest'><srai>XRest <get var='items'/></srai></set>
 						<loop/>
 					</li>
 				</condition>
@@ -197,30 +188,45 @@
 		<template><star/></template>
 	</category>
 	<category><pattern>XReverse * *</pattern>
-		<template><srai>XReverse <star index='2'/></srai> <star/></template>
+		<template><star index='2'/> <star/> </template>
+	</category>
+	<category><pattern>XReverse * * *</pattern>
+		<template><star index='3'/> <star index='2'/> <star/> </template>
+	</category>
+	<category><pattern>XReverse * * * *</pattern>
+		<template><star index='4'/> <star index='3'/> <star index='2'/> <star/> </template>
+	</category>
+	<category><pattern>XReverse * * * * *</pattern>
+		<template><star index='5'/> <star index='4'/> <star index='3'/> <star index='2'/> <star/> </template>
+	</category>
+	<category><pattern>XReverse * * * * * *</pattern>
+		<template><star index='6'/> <star index='5'/> <star index='4'/> <star index='3'/> <star index='2'/> <star/> </template>
+	</category>
+	<category><pattern>XReverse * * * * * * *</pattern>
+		<template><srai>XReverse <star index='7'/></srai> <star index='6'/> <star index='5'/> <star index='4'/> <star index='3'/> <star index='2'/> <star/> </template>
 	</category>
 
-	<!-- Usage: XPrepend [element] [list ...] -->
+	<!-- Usage: XPrepend [element] XS [list ...] -->
 	<!-- Returns the list with the specified element prepended. -->
-	<category><pattern>XPrepend * nil</pattern>
+	<category><pattern>XPrepend * XS nil</pattern>
 		<template><star/></template>
 	</category>
-	<category><pattern>XPrepend *</pattern>
+	<category><pattern>XPrepend * XS</pattern>
 		<template><star/></template>
 	</category>
-	<category><pattern>XPrepend * *</pattern>
+	<category><pattern>XPrepend * XS *</pattern>
 		<template><star/> <star index='2'/></template>
 	</category>
 
-	<!-- Usage: XAppend [element] [list ...] -->
+	<!-- Usage: XAppend [element] XS [list ...] -->
 	<!-- Returns the list with the specified element appended. -->
-	<category><pattern>XAppend * nil</pattern>
+	<category><pattern>XAppend * XS nil</pattern>
 		<template><star/></template>
 	</category>
-	<category><pattern>XAppend *</pattern>
+	<category><pattern>XAppend * XS</pattern>
 		<template><star/></template>
 	</category>
-	<category><pattern>XAppend * *</pattern>
+	<category><pattern>XAppend * XS *</pattern>
 		<template><star index='2'/> <star/></template>
 	</category>
 
@@ -412,6 +418,22 @@
 		<template><star/></template>
 	</category>
 	<category><pattern>XImplode * *</pattern>
-		<template><star/><srai>XImplode <star index='2'/></srai></template>
+		<template><star/><star index='2'/></template>
+	</category>
+	<category><pattern>XImplode * * *</pattern>
+		<template><star/><star index='2'/><star index='3'/></template>
+	</category>
+	<category><pattern>XImplode * * * *</pattern>
+		<template><star/><star index='2'/><star index='3'/><star index='4'/></template>
+	</category>
+	<category><pattern>XImplode * * * * *</pattern>
+		<template><star/><star index='2'/><star index='3'/><star index='4'/><star index='5'/></template>
+	</category>
+	<category><pattern>XImplode * * * * * *</pattern>
+		<template><star/><star index='2'/><star index='3'/><star index='4'/><star index='5'/><star index='6'/></template>
+	</category>
+	<category><pattern>XImplode * * * * * * * *</pattern>
+		<template><star/><star index='2'/><star index='3'/><star index='4'/><star index='5'/><star index='6'/><srai>XImplode <star index='7'/></srai></template>
+	</category>
 	</category>
 </aiml>

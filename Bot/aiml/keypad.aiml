@@ -159,7 +159,7 @@
 						<think>
 							<set><name>KeypadDescription<get var='glyph'/></name><star/></set>
 							<set><name>KeypadGlyph<get name='KeypadAsking'/></name><get var='glyph'/></set>
-							<set name='KeypadAsked'><srai>XAppend <get var='glyph'/> <get name='KeypadAsked'/></srai></set>
+							<set name='KeypadAsked'><srai>XAppend <get var='glyph'/> XS <get name='KeypadAsked'/></srai></set>
 							<think><set name='KeypadAsking'><map name='successor'><get name='KeypadAsking'/></map></set></think>
 						</think>
 						true
@@ -205,7 +205,7 @@
 									<set var='toCheck'><srai>XRest <get var='toCheck'/></srai></set>
 									<condition var='contains' value='true'>
 										<set var='numberPossible'><map name='successor'><get var='numberPossible'/></map></set>
-										<set var='possible'><srai>XAppend <get var='column'/> <get var='possible'/></srai></set>
+										<set var='possible'><srai>XAppend <get var='column'/> XS <get var='possible'/></srai></set>
 									</condition>
 									<loop/>
 								</li>
@@ -225,10 +225,10 @@
 									<set var='glyph'><srai>XFirst <get var='columnGlyphs'/></srai></set>
 									<set var='columnGlyphs'><srai>XRest <get var='columnGlyphs'/></srai></set>
 									<condition var='glyph'>
-										<li><value><star index='2'/></value><set var='result'><srai>XAppend <get var='glyph'/> <get var='result'/></srai></set></li>
-										<li><value><star index='3'/></value><set var='result'><srai>XAppend <get var='glyph'/> <get var='result'/></srai></set></li>
-										<li><value><star index='4'/></value><set var='result'><srai>XAppend <get var='glyph'/> <get var='result'/></srai></set></li>
-										<li><value><star index='5'/></value><set var='result'><srai>XAppend <get var='glyph'/> <get var='result'/></srai></set></li>
+										<li><value><star index='2'/></value><set var='result'><srai>XAppend <get var='glyph'/> XS <get var='result'/></srai></set></li>
+										<li><value><star index='3'/></value><set var='result'><srai>XAppend <get var='glyph'/> XS <get var='result'/></srai></set></li>
+										<li><value><star index='4'/></value><set var='result'><srai>XAppend <get var='glyph'/> XS <get var='result'/></srai></set></li>
+										<li><value><star index='5'/></value><set var='result'><srai>XAppend <get var='glyph'/> XS <get var='result'/></srai></set></li>
 									</condition>
 									<loop/>
 								</li>
@@ -269,7 +269,7 @@
 											<set var='toCheck'><srai>XRest <get var='toCheck'/></srai></set>
 											<condition var='contains' value='true'>
 												<set var='numberPossible'><map name='successor'><get var='numberPossible'/></map></set>
-												<set var='possible'><srai>XAppend <get var='column'/> <get var='possible'/></srai></set>
+												<set var='possible'><srai>XAppend <get var='column'/> XS <get var='possible'/></srai></set>
 											</condition>
 											<loop/>
 										</li>
@@ -348,7 +348,7 @@
 								<li>
 									<set var='contains'><srai>XContains <star index='2'/> XS <map><name>KeypadColumns<star/></name><get var='columnIndex'/></map></srai></set>
 									<condition var='contains' value='true'>
-										<set name='KeypadColumns'><srai>XAppend <get var='columnIndex'/> <get name='KeypadColumns'/></srai></set>
+										<set name='KeypadColumns'><srai>XAppend <get var='columnIndex'/> XS <get name='KeypadColumns'/></srai></set>
 										<set var='numberPossible'><map name='successor'><get var='numberPossible'/></map></set>
 									</condition>
 									<set var='columnIndex'><map name='successor'><get var='columnIndex'/></map></set>
@@ -371,7 +371,7 @@
 											<set var='column'><srai>XRest <get var='column'/></srai></set>
 											<set var='contains'><srai>XContains <get var='glyph'/> XS <get var='column2'/></srai></set>
 											<condition var='contains' value='false'>
-												<set name='KeypadToAsk'><srai>XAppend <get var='glyph'/> <get name='KeypadToAsk'/></srai></set>
+												<set name='KeypadToAsk'><srai>XAppend <get var='glyph'/> XS <get name='KeypadToAsk'/></srai></set>
 											</condition>
 											<loop/>
 										</li>
@@ -385,7 +385,7 @@
 											<set var='column'><srai>XRest <get var='column'/></srai></set>
 											<set var='contains'><srai>XContains <get var='glyph'/> XS <get var='column1'/></srai></set>
 											<condition var='contains' value='false'>
-												<set name='KeypadToAsk'><srai>XAppend <get var='glyph'/> <get name='KeypadToAsk'/></srai></set>
+												<set name='KeypadToAsk'><srai>XAppend <get var='glyph'/> XS <get name='KeypadToAsk'/></srai></set>
 											</condition>
 											<loop/>
 										</li>
@@ -468,7 +468,7 @@
 				<think>
 					<set var='answer'><star/></set>
 					<condition var='answer' value='no'>
-						<set name='KeypadAbsent'><srai>XAppend <get name='KeypadAsking'/> <get name='KeypadAbsent'/></srai></set>
+						<set name='KeypadAbsent'><srai>XAppend <get name='KeypadAsking'/> XS <get name='KeypadAbsent'/></srai></set>
 					</condition>
 				</think>
 				<srai>KeypadResult <srai>Solver Keypad GlyphPresent <map name='ParseBoolean'><star/></map> <get name='KeypadAsking'/></srai></srai>

@@ -500,7 +500,7 @@
 							<condition name='Indicators' value='unknown'>
 								<set name='Indicators'>nil</set>
 							</condition>
-							<set name='Indicators'><srai>XAppend <get var='label'/> <get name='Indicators'/></srai></set>
+							<set name='Indicators'><srai>XAppend <get var='label'/> XS <get name='Indicators'/></srai></set>
 							<set><name>IndicatorLit<get var='label'/></name><star/></set>
 							<set name='IndicatorCount'><map name='successor'><get name='IndicatorCount'/></map></set>
 
@@ -533,11 +533,11 @@
 				<condition var='state'>
 					<li value='Any'>
 						<set><name>Indicator<topicstar index='2'/></name><get var='answer'/></set>
-						<set name='IndicatorsChecked'><srai>XAppend <topicstar index='2'/> <get name='IndicatorsChecked'/></srai></set>
+						<set name='IndicatorsChecked'><srai>XAppend <topicstar index='2'/> XS <get name='IndicatorsChecked'/></srai></set>
 						<condition var='answer'>
 							<li value='true'>
 								<!-- If the indicator is present, add it to the list. -->
-								<set name='Indicators'><srai>XAppend <topicstar index='2'/> <get name='Indicators'/></srai></set>
+								<set name='Indicators'><srai>XAppend <topicstar index='2'/> XS <get name='Indicators'/></srai></set>
 								<!-- If we were previously told the indicator is not lit or unlit, we know it is in the opposite state. -->
 								<condition>
 									<li value='false'><name>IndicatorLit<topicstar index='2'/></name>
@@ -555,11 +555,11 @@
 						</condition>
 					</li>
 					<li>
-						<set name='IndicatorsChecked'><srai>XAppend <topicstar index='2'/> <get name='IndicatorsChecked'/></srai></set>
+						<set name='IndicatorsChecked'><srai>XAppend <topicstar index='2'/> XS <get name='IndicatorsChecked'/></srai></set>
 						<condition var='answer'>
 							<li value='true'>
 								<!-- The indicator is present and in the asked state. -->
-								<set name='Indicators'><srai>XAppend <topicstar index='2'/> <get name='Indicators'/></srai></set>
+								<set name='Indicators'><srai>XAppend <topicstar index='2'/> XS <get name='Indicators'/></srai></set>
 								<set><name>Indicator<topicstar index='2'/></name>true</set>
 								<set><name>Indicator<topicstar/><topicstar index='2'/></name>true</set>
 								<set><name>Indicator<map name='not'><topicstar/></map><topicstar index='2'/></name>false</set>

@@ -177,7 +177,7 @@
 		<category><pattern><set>AdventureGameItem</set> ^</pattern>
 			<template>
 				<think>
-					<set name='AdventureGameItems'><srai>XAppend <srai>XImplode <star/></srai> <get name='AdventureGameItems'/></srai></set>
+					<set name='AdventureGameItems'><srai>XAppend <srai>XImplode <star/></srai> XS <get name='AdventureGameItems'/></srai></set>
 				</think>
 				<srai><star index='2'/></srai>
 			</template>

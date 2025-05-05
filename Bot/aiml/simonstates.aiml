@@ -45,7 +45,7 @@
 					<li>
 						<think>
 							<srai>SouvenirPut Flashes <get name='SimonStatesStage'/> XS <star/></srai>
-							<set name='SimonStatesInput'><srai>XAppend <srai>Solver SimonStates <get name='SimonStatesStage'/> XS <star/> XS <get name='SimonStatesInput'/></srai> <get name='SimonStatesInput'/></srai></set>
+							<set name='SimonStatesInput'><srai>XAppend <srai>Solver SimonStates <get name='SimonStatesStage'/> XS <star/> XS <get name='SimonStatesInput'/></srai> XS <get name='SimonStatesInput'/></srai></set>
 							<set name='SimonStatesStage'><map name='successor'><get name='SimonStatesStage'/></map></set>
 						</think>
 						Press <get name='SimonStatesInput'/>.

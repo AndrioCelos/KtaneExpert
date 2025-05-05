@@ -28,13 +28,13 @@
 			<get var='a'/>
 		</template>
 	</category>
-	<category><pattern>XAddInner dash <set>number</set> XS <set>number</set></pattern>
+	<category><pattern>XAddInner <set>minus</set> <set>number</set> XS <set>number</set></pattern>
 		<template><srai>XSubtractInner <star index='2'/> XS <star/></srai></template>
 	</category>
-	<category><pattern>XAddInner <set>number</set> XS dash <set>number</set></pattern>
+	<category><pattern>XAddInner <set>number</set> XS <set>minus</set> <set>number</set></pattern>
 		<template><srai>XSubtractInner <star/> XS <star index='2'/></srai></template>
 	</category>
-	<category><pattern>XAddInner dash <set>number</set> XS dash <set>number</set></pattern>
+	<category><pattern>XAddInner <set>minus</set> <set>number</set> XS <set>minus</set> <set>number</set></pattern>
 		<template>-<srai>XAddInner <star/> XS <star index='2'/></srai></template>
 	</category>
 
@@ -66,13 +66,13 @@
 			<get var='a'/>
 		</template>
 	</category>
-	<category><pattern>XSubtractInner dash <set>number</set> XS <set>number</set></pattern>
+	<category><pattern>XSubtractInner <set>minus</set> <set>number</set> XS <set>number</set></pattern>
 		<template>-<srai>XAddInner <star/> XS <star index='2'/></srai></template>
 	</category>
-	<category><pattern>XSubtractInner <set>number</set> XS dash <set>number</set></pattern>
+	<category><pattern>XSubtractInner <set>number</set> XS <set>minus</set> <set>number</set></pattern>
 		<template><srai>XAddInner <star/> XS <star index='2'/></srai></template>
 	</category>
-	<category><pattern>XSubtractInner dash <set>number</set> XS dash <set>number</set></pattern>
+	<category><pattern>XSubtractInner <set>minus</set> <set>number</set> XS <set>minus</set> <set>number</set></pattern>
 		<template><srai>XSubtractInner <star index='2'/> XS <star/></srai></template>
 	</category>
 
@@ -105,18 +105,18 @@
 			<get var='product'/>
 		</template>
 	</category>
-	<category><pattern>XMultiplyInner dash <set>number</set> XS <set>number</set></pattern>
+	<category><pattern>XMultiplyInner <set>minus</set> <set>number</set> XS <set>number</set></pattern>
 		<template>-<srai>XMultiplyInner <star/> XS <star index='2'/></srai></template>
 	</category>
-	<category><pattern>XMultiplyInner <set>number</set> XS dash <set>number</set></pattern>
+	<category><pattern>XMultiplyInner <set>number</set> XS <set>minus</set> <set>number</set></pattern>
 		<template>-<srai>XMultiplyInner <star/> XS <star index='2'/></srai></template>
 	</category>
-	<category><pattern>XMultiplyInner dash <set>number</set> XS dash <set>number</set></pattern>
+	<category><pattern>XMultiplyInner <set>minus</set> <set>number</set> XS <set>minus</set> <set>number</set></pattern>
 		<template><srai>XMultiplyInner <star/> XS <star index='2'/></srai></template>
 	</category>
 
 	<!-- Usage: X0Mod [a] XS [b] -->
-	<!-- Returns a mod b. The result is always between 0 and (b - 1). -->
+	<!-- Returns a mod b. The result is always non-negative and less than b. -->
 	<category><pattern>X0Mod * XS *</pattern>
 		<template>
 			<think>
@@ -131,7 +131,7 @@
 	</category>
 
 	<!-- Usage: X1Mod [a] XS [b] -->
-	<!-- Returns a 1mod b using one-based modulus. The result is always between 1 and b. -->
+	<!-- Returns a 1mod b using one-based modulus. The result is always positive and not greater than b. -->
 	<category><pattern>X1Mod * XS *</pattern>
 		<template>
 			<think>
@@ -150,6 +150,8 @@
 		</template>
 	</category>
 
+	<!-- Usage: IsLetterOrDigit [x] -->
+	<!-- Returns 'digit' if x is digits, or 'letter' otherwise. -->
 	<category><pattern>IsLetterOrDigit <set>number</set></pattern>
 		<template>digit</template>
 	</category>
@@ -157,6 +159,8 @@
 		<template>letter</template>
 	</category>
 
+	<!-- Usage: IsNumber [x] -->
+	<!-- Returns true if x is digits, or false otherwise. -->
 	<category><pattern>IsNumber *</pattern>
 		<template><srai>XIsNumber <star/></srai></template>
 	</category>
@@ -167,7 +171,7 @@
 		<template>false</template>
 	</category>
 
-		<!-- Usage: XCompareDigits [a] XS [b] -->
+	<!-- Usage: XCompareDigits [a] XS [b] -->
 	<!-- Returns -1 if a < b, 0 if a = b, 1 if a > b. O(max(a, b)). a and b must be non-negative. -->
 	<category><pattern>XCompareDigits * XS *</pattern>
 		<template>

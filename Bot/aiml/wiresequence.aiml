@@ -178,7 +178,7 @@
 												<li value='true'>
 													<set var='toCutCount'><map name='successor'><get var='toCutCount'/></map></set>
 													<set><var><get var='colour'/>ToCutCount</var><map name='successor'><get><var><get var='colour'/>ToCutCount</var></get></map></set>
-													<set><var><get var='colour'/>ToCut</var><srai>XAppend <get><var><get var='colour'/>Count</var></get> <get><var><get var='colour'/>ToCut</var></get></srai></set>
+													<set><var><get var='colour'/>ToCut</var><srai>XAppend <get><var><get var='colour'/>Count</var></get> XS <get><var><get var='colour'/>ToCut</var></get></srai></set>
 												</li>
 												<li>
 													<set var='toNotCutCount'><map name='successor'><get var='toNotCutCount'/></map></set>

@@ -52,21 +52,21 @@
 								<li value='next'>
 									<set var='wire'><map name='successor'><get var='wire'/></map></set>
 									<set var='flags'>nil</set>
-									<condition var='red' value='true'><set var='flags'><srai>XAppend red <get var='flags'/></srai></set></condition>
-									<condition var='blue' value='true'><set var='flags'><srai>XAppend blue <get var='flags'/></srai></set></condition>
-									<condition var='star' value='true'><set var='flags'><srai>XAppend star <get var='flags'/></srai></set></condition>
-									<condition var='light' value='true'><set var='flags'><srai>XAppend light <get var='flags'/></srai></set></condition>
+									<condition var='red' value='true'><set var='flags'><srai>XAppend red XS <get var='flags'/></srai></set></condition>
+									<condition var='blue' value='true'><set var='flags'><srai>XAppend blue XS <get var='flags'/></srai></set></condition>
+									<condition var='star' value='true'><set var='flags'><srai>XAppend star XS <get var='flags'/></srai></set></condition>
+									<condition var='light' value='true'><set var='flags'><srai>XAppend light XS <get var='flags'/></srai></set></condition>
 
 									<set var='result'><srai>Solver ComplicatedWires <get var='flags'/></srai></set>
 									<set var='code'><srai>XFirst <get var='result'/></srai></set>
 									<set var='detail'><srai>XRest <get var='result'/></srai></set>
 									<condition var='result'>
 										<li value='true'>
-											<set var='toCut'><srai>XAppend <get var='wire'/> <get var='toCut'/></srai></set>
+											<set var='toCut'><srai>XAppend <get var='wire'/> XS <get var='toCut'/></srai></set>
 											<set var='toCutCount'><map name='successor'><get var='toCutCount'/></map></set>
 										</li>
 										<li value='false'>
-											<set var='toNotCut'><srai>XAppend <get var='wire'/> <get var='toNotCut'/></srai></set>
+											<set var='toNotCut'><srai>XAppend <get var='wire'/> XS <get var='toNotCut'/></srai></set>
 											<set var='toNotCutCount'><map name='successor'><get var='toNotCutCount'/></map></set>
 										</li>
 										<li>
@@ -177,28 +177,28 @@
 		<category><pattern>yes</pattern>
 			<that>Is the * wire red</that>
 			<template>
-				<think><set name='ComplicatedWiresFlags'><srai>XAppend red <get name='ComplicatedWiresFlags'/></srai></set></think>
+				<think><set name='ComplicatedWiresFlags'><srai>XAppend red XS <get name='ComplicatedWiresFlags'/></srai></set></think>
 				<srai>YNCContinue</srai>
 			</template>
 		</category>
 		<category><pattern>yes</pattern>
 			<that>Is the wire blue</that>
 			<template>
-				<think><set name='ComplicatedWiresFlags'><srai>XAppend blue <get name='ComplicatedWiresFlags'/></srai></set></think>
+				<think><set name='ComplicatedWiresFlags'><srai>XAppend blue XS <get name='ComplicatedWiresFlags'/></srai></set></think>
 				<srai>YNCContinue</srai>
 			</template>
 		</category>
 		<category><pattern>yes</pattern>
 			<that>Is the light on</that>
 			<template>
-				<think><set name='ComplicatedWiresFlags'><srai>XAppend light <get name='ComplicatedWiresFlags'/></srai></set></think>
+				<think><set name='ComplicatedWiresFlags'><srai>XAppend light XS <get name='ComplicatedWiresFlags'/></srai></set></think>
 				<srai>YNCContinue</srai>
 			</template>
 		</category>
 		<category><pattern>yes</pattern>
 			<that>Is there a star</that>
 			<template>
-				<think><set name='ComplicatedWiresFlags'><srai>XAppend star <get name='ComplicatedWiresFlags'/></srai></set></think>
+				<think><set name='ComplicatedWiresFlags'><srai>XAppend star XS <get name='ComplicatedWiresFlags'/></srai></set></think>
 				<srai>YNCContinue</srai>
 			</template>
 		</category>

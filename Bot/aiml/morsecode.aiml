@@ -209,13 +209,13 @@
 										<set var='token'>space</set>
 									</condition>
 									<condition var='token'>
-										<li value='dash'><set var='letter'><srai>XAppend dash <get var='letter'/></srai></set></li>
-										<li value='dah'><set var='letter'><srai>XAppend dash <get var='letter'/></srai></set></li>
-										<li value='long'><set var='letter'><srai>XAppend dash <get var='letter'/></srai></set></li>
-										<li value='dot'><set var='letter'><srai>XAppend dot <get var='letter'/></srai></set></li>
-										<li value='dit'><set var='letter'><srai>XAppend dot <get var='letter'/></srai></set></li>
-										<li value='di'><set var='letter'><srai>XAppend dot <get var='letter'/></srai></set></li>
-										<li value='short'><set var='letter'><srai>XAppend dot <get var='letter'/></srai></set></li>
+										<li value='dash'><set var='letter'><srai>XAppend dash XS <get var='letter'/></srai></set></li>
+										<li value='dah'><set var='letter'><srai>XAppend dash XS <get var='letter'/></srai></set></li>
+										<li value='long'><set var='letter'><srai>XAppend dash XS <get var='letter'/></srai></set></li>
+										<li value='dot'><set var='letter'><srai>XAppend dot XS <get var='letter'/></srai></set></li>
+										<li value='dit'><set var='letter'><srai>XAppend dot XS <get var='letter'/></srai></set></li>
+										<li value='di'><set var='letter'><srai>XAppend dot XS <get var='letter'/></srai></set></li>
+										<li value='short'><set var='letter'><srai>XAppend dot XS <get var='letter'/></srai></set></li>
 										<li value='start'><set var='endchar'>true</set></li>
 										<li value='space'><set var='endchar'>true</set></li>
 										<li value='nil'><set var='endchar'>true</set></li>

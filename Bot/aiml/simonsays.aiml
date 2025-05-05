@@ -59,7 +59,7 @@
 									<set var='colour'><srai>XFirst <get var='list'/></srai></set>
 									<set var='list'><srai>XRest <get var='list'/></srai></set>
 									<set var='colour'><srai>SimonSaysMap <star/> <get var='colour'/></srai></set>
-									<set var='result'><srai>XAppend <get var='colour'/> <get var='result'/></srai></set>
+									<set var='result'><srai>XAppend <get var='colour'/> XS <get var='result'/></srai></set>
 									<loop/>
 								</li>
 							</condition>

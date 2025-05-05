@@ -18,13 +18,13 @@
 				<test name='Rest 2' expected='nil'>XRest alfa</test>
 				<test name='Rest 3' expected='nil'>XRest</test>
 
-				<test name='Prepend 1' expected='alfa bravo charlie'>XPrepend alfa bravo charlie</test>
-				<test name='Prepend 2' expected='alfa'>XPrepend alfa nil</test>
-				<test name='Prepend 3' expected='alfa'>XPrepend alfa</test>
+				<test name='Prepend 1' expected='alfa bravo charlie'>XPrepend alfa XS bravo charlie</test>
+				<test name='Prepend 2' expected='alfa'>XPrepend alfa XS nil</test>
+				<test name='Prepend 3' expected='alfa'>XPrepend alfa XS</test>
 
-				<test name='Append 1' expected='bravo charlie alfa'>XAppend alfa bravo charlie</test>
-				<test name='Append 2' expected='alfa'>XAppend alfa nil</test>
-				<test name='Append 3' expected='alfa'>XAppend alfa</test>
+				<test name='Append 1' expected='bravo charlie alfa'>XAppend alfa XS bravo charlie</test>
+				<test name='Append 2' expected='alfa'>XAppend alfa XS nil</test>
+				<test name='Append 3' expected='alfa'>XAppend alfa XS</test>
 
 				<test name='CountMatch 1' expected='2'>XCountMatch A XS A B A</test>
 				<test name='CountMatch 2' expected='0'>XCountMatch A XS</test>

@@ -92,22 +92,22 @@
 
 								<set var='cannotgo'><srai>XContains North XS <get var='cannotgowhere'/></srai></set>
 								<condition var='cannotgo' value='false'>
-									<set name='MazeSolverOpen'><srai>XAppend <get name='MazeSolverX'/> <get name='MazeSolverOpen'/></srai> <map name='predecessor'><get name='MazeSolverY'/></map> North</set>
+									<set name='MazeSolverOpen'><srai>XAppend <get name='MazeSolverX'/> XS <get name='MazeSolverOpen'/></srai> <map name='predecessor'><get name='MazeSolverY'/></map> North</set>
 								</condition>
 
 								<set var='cannotgo'><srai>XContains South XS <get var='cannotgowhere'/></srai></set>
 								<condition var='cannotgo' value='false'>
-									<set name='MazeSolverOpen'><srai>XAppend <get name='MazeSolverX'/> <get name='MazeSolverOpen'/></srai> <map name='successor'><get name='MazeSolverY'/></map> South</set>
+									<set name='MazeSolverOpen'><srai>XAppend <get name='MazeSolverX'/> XS <get name='MazeSolverOpen'/></srai> <map name='successor'><get name='MazeSolverY'/></map> South</set>
 								</condition>
 
 								<set var='cannotgo'><srai>XContains West XS <get var='cannotgowhere'/></srai></set>
 								<condition var='cannotgo' value='false'>
-									<set name='MazeSolverOpen'><srai>XAppend <map name='predecessor'><get name='MazeSolverX'/></map> <get name='MazeSolverOpen'/></srai> <get name='MazeSolverY'/> West</set>
+									<set name='MazeSolverOpen'><srai>XAppend <map name='predecessor'><get name='MazeSolverX'/></map> XS <get name='MazeSolverOpen'/></srai> <get name='MazeSolverY'/> West</set>
 								</condition>
 
 								<set var='cannotgo'><srai>XContains East XS <get var='cannotgowhere'/></srai></set>
 								<condition var='cannotgo' value='false'>
-									<set name='MazeSolverOpen'><srai>XAppend <map name='successor'><get name='MazeSolverX'/></map> <get name='MazeSolverOpen'/></srai> <get name='MazeSolverY'/> East</set>
+									<set name='MazeSolverOpen'><srai>XAppend <map name='successor'><get name='MazeSolverX'/></map> XS <get name='MazeSolverOpen'/></srai> <get name='MazeSolverY'/> East</set>
 								</condition>
 							</li>
 						</condition>
